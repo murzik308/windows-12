@@ -1,222 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 12 Activator</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windows 12 Activator</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/microsoft/cascadia-code/releases@latest/Cascadia.css">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+body{
+    height:100vh;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%, #ff5ebc55 0%, transparent 30%),
+        radial-gradient(circle at 80% 30%, #7c4dff66 0%, transparent 35%),
+        radial-gradient(circle at 50% 80%, #00e5ff55 0%, transparent 35%),
+        linear-gradient(135deg,#1a0933,#2d1464,#0e3a6d);
+}
 
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
-        }
+/* Bloom-style wallpaper */
+.bloom{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
+.bloom::before,
+.bloom::after{
+    content:"";
+    position:absolute;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    filter:blur(60px);
+}
 
-        .container {
-            z-index: 1;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            max-width: 600px;
-            width: 100%;
-        }
+.bloom::before{
+    background:
+    conic-gradient(
+        #ff4fd8,
+        #9b5cff,
+        #4f7dff,
+        #00d9ff,
+        #ff4fd8
+    );
+    top:50%;
+    left:50%;
+    transform:
+        translate(-50%,-50%)
+        rotate(25deg)
+        scale(0.8,0.45);
+}
 
-        .windows-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-        }
+.bloom::after{
+    background:
+    conic-gradient(
+        #ffffff22,
+        #ffffff00,
+        #ffffff22
+    );
+    top:50%;
+    left:50%;
+    transform:
+        translate(-50%,-50%)
+        rotate(-20deg)
+        scale(0.7,0.4);
+}
 
-        h1 {
-            color: white;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            font-weight: 600;
-        }
+.container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+    z-index:5;
+    transition:.8s;
+}
 
-        .promo-text {
-            color: white;
-            font-size: 1.3em;
-            margin-bottom: 25px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        }
+.logo{
+    width:110px;
+    height:110px;
+    margin:auto;
+    margin-bottom:15px;
+}
 
-        .get-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.1em;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+h1{
+    font-size:48px;
+    font-weight:900;
+    margin-bottom:10px;
+}
 
-        .get-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
+h4{
+    font-size:18px;
+    font-weight:500;
+    opacity:.9;
+    max-width:800px;
+}
 
-        .get-button:active {
-            transform: translateY(0);
-        }
+.btn{
+    margin-top:25px;
+    border:none;
+    background:#ff2d2d;
+    color:white;
+    font-size:24px;
+    font-weight:900;
+    padding:18px 42px;
+    border-radius:16px;
+    cursor:pointer;
+    transition:.8s;
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+}
 
-        .key-display {
-            display: none;
-            background: #10b981;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-size: 1.1em;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.btn:hover{
+    transform:scale(1.05);
+}
 
-        .key-display.show {
-            display: flex;
-        }
+.top-button{
+    position:fixed;
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:1000;
+}
 
-        .key-text {
-            flex: 1;
-            min-width: 200px;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-        }
+.generating{
+    background:#ffd400 !important;
+    color:black !important;
+}
 
-        .copy-button {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-            padding: 10px 20px;
-            font-size: 0.9em;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            white-space: nowrap;
-        }
+.terminal-wrapper{
+    position:fixed;
+    inset:0;
+    backdrop-filter:blur(18px);
+    background:rgba(0,0,0,.15);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:50;
+}
 
-        .copy-button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-        }
+.terminal{
+    width:900px;
+    max-width:90%;
+    height:420px;
+    margin-top:-120px;
+    border-radius:22px;
+    overflow:hidden;
+    background:rgba(30,30,30,.65);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    backdrop-filter:blur(40px);
+}
 
-        .copy-button:active {
-            transform: scale(0.95);
-        }
+.term-header{
+    height:42px;
+    display:flex;
+    align-items:center;
+    padding-left:15px;
+    background:rgba(255,255,255,.08);
+}
 
-        .copy-button.copied {
-            background: white;
-            color: #10b981;
-        }
-    </style>
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    margin-right:8px;
+}
+
+.red{background:#ff5f57;}
+.yellow{background:#febc2e;}
+.green{background:#28c840;}
+
+.term-content{
+    padding:20px;
+    font-family:"Cascadia Code", monospace;
+    font-size:18px;
+    overflow:auto;
+    height:calc(100% - 42px);
+}
+
+.line{
+    margin-bottom:12px;
+    opacity:0;
+    animation:fade .4s forwards;
+    line-height:1.5;
+    word-break:break-word;
+}
+
+@keyframes fade{
+    to{opacity:1;}
+}
+
+.purple{color:#cc77ff;}
+.yellowText{color:#ffe14a;}
+.greenText{color:#4cff79;}
+
+.key-popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(.8);
+    opacity:0;
+
+    background:#19c35a;
+    color:white;
+    padding:18px;
+    border-radius:18px;
+
+    width:650px;
+    max-width:95%;
+
+    display:none;
+    z-index:1200;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    transition:.4s;
+}
+
+.key-title{
+    font-size:22px;
+    font-weight:900;
+    margin-bottom:12px;
+}
+
+.key-row{
+    display:flex;
+    gap:10px;
+}
+
+.key-box{
+    flex:1;
+    background:#121212;
+    color:#7dff9c;
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    font-family:Consolas;
+    font-size:16px;
+}
+
+.copy-btn{
+    border:none;
+    background:white;
+    color:black;
+    font-weight:800;
+    border-radius:10px;
+    padding:0 20px;
+    cursor:pointer;
+}
+
+.terminal.blurred{
+    filter:blur(8px);
+    transition:filter .4s ease;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="windows-icon">🪟</div>
-        <h1>Windows 12 Activator</h1>
-        <p class="promo-text">Don't have Windows 12 key? Get it for free!</p>
-        <button class="get-button" onclick="showKey()">Get</button>
-        <div class="key-display" id="keyDisplay">
-            <span class="key-text">Activate key: GYJKI-OKITE-INDTH-QGRAB-MSTSC</span>
-            <button class="copy-button" onclick="copyToClipboard()" id="copyButton">Copy to clipboard</button>
+
+<div class="bloom"></div>
+
+<div class="container" id="hero">
+
+<svg class="logo" viewBox="0 0 88 88">
+<rect x="6" y="6" width="34" height="34" fill="#4cc2ff"/>
+<rect x="48" y="6" width="34" height="34" fill="#4cc2ff"/>
+<rect x="6" y="48" width="34" height="34" fill="#4cc2ff"/>
+<rect x="48" y="48" width="34" height="34" fill="#4cc2ff"/>
+</svg>
+
+<h1><b>Windows 12 Activator</b></h1>
+
+<h4>
+Generate a free Windows 12 Activation key.
+100% secure.
+Made by murztandj97 for the Windows 12.1 Project
+</h4>
+
+<button class="btn" id="startBtn">
+Get it now!
+</button>
+
+</div>
+
+<div class="terminal-wrapper" id="terminalWrapper">
+    <div class="terminal">
+        <div class="term-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
         </div>
+
+        <div class="term-content" id="terminal"></div>
     </div>
+</div>
 
-    <script>
-        function showKey() {
-            const keyDisplay = document.getElementById('keyDisplay');
-            keyDisplay.classList.add('show');
-        }
+<div class="key-popup" id="keyPopup">
+    <div class="key-title">Your Generated Key:</div>
 
-        function copyToClipboard() {
-            const key = 'GYJKI-OKITE-INDTH-QGRAB-MSTSC';
-            const copyButton = document.getElementById('copyButton');
-            
-            navigator.clipboard.writeText(key).then(() => {
-                const originalText = copyButton.textContent;
-                copyButton.textContent = 'Copied!';
-                copyButton.classList.add('copied');
-                
-                setTimeout(() => {
-                    copyButton.textContent = originalText;
-                    copyButton.classList.remove('copied');
-                }, 2000);
-            }).catch(err => {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = key;
-                textArea.style.position = 'fixed';
-                textArea.style.opacity = '0';
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    const originalText = copyButton.textContent;
-                    copyButton.textContent = 'Copied!';
-                    copyButton.classList.add('copied');
-                    
-                    setTimeout(() => {
-                        copyButton.textContent = originalText;
-                        copyButton.classList.remove('copied');
-                    }, 2000);
-                } catch (err) {
-                    alert('Failed to copy. Please copy manually: ' + key);
-                }
-                document.body.removeChild(textArea);
-            });
-        }
-    </script>
+    <div class="key-row">
+        <input class="key-box" readonly id="keyBox">
+        <button class="copy-btn" onclick="copyKey()">
+            Copy
+        </button>
+    </div>
+</div>
+
+<script>
+
+const keys = [
+"GYJKI-OKITE-INDTH-QGRAB-MSTSC",
+"FTBDH-OANTH-RJAVL-KAVER-ISINT",
+"MURZI-YUGFT-LAKOM-THWNL-AMFJY",
+"ALRBY-LABRT-WCXJG-QOIYF-ZXCVB",
+"ABFKR-ROTNG-BERQS-LRUNY-EWOBS",
+"DIFNH-DHRJO-QPRYE-MFKGV-EHNFT",
+"ZMXNC-BVLAK-SJDHF-GPQOI-EURYM",
+"EURHF-ALFBG-QITBF-LABFT-RTUBY",
+"EIOUR-BJKES-NVZWW-SADLK-EWPOI",
+"AUDNB-QKRGY-WIRBG-ALDHG-ETBGC",
+"FSTRH-BVFHK-WURHD-FAGHF-ROUJH",
+"MDUBI-YTMWN-TJKAM-ARUTE-WINTW",
+"PDJSF-WRUYR-VNHVI-QUCHE-LAUTB",
+"ASJHD-ASHER-TRASH-FFBYU-MRZNN"
+];
+
+let generatedKey = "";
+
+const terminal = document.getElementById("terminal");
+const btn = document.getElementById("startBtn");
+
+function addLine(text, cls){
+
+    const div = document.createElement("div");
+    div.className = "line";
+
+    div.innerHTML =
+        '<span style="color:white;">[win12gen]</span> ' +
+        '<span class="' + cls + '">' +
+        text +
+        '</span>';
+
+    terminal.appendChild(div);
+    terminal.scrollTop = terminal.scrollHeight;
+}
+
+function wait(ms){
+    return new Promise(r=>setTimeout(r,ms));
+}
+
+btn.addEventListener("click", async ()=>{
+
+    btn.disabled = true;
+
+    document.getElementById("hero").style.transform =
+        "translate(-50%,-65%)";
+
+    btn.classList.add("top-button");
+    btn.classList.add("generating");
+    btn.textContent = "Generating key...";
+
+    document.getElementById("terminalWrapper").style.display = "flex";
+
+    generatedKey =
+        keys[Math.floor(Math.random()*keys.length)];
+
+    addLine(
+        "Universal Windows 12 Generator Ready...",
+        "purple"
+    );
+
+    await wait(2000);
+
+    addLine(
+        "Generating Windows 12 key...",
+        "yellowText"
+    );
+
+    await wait(5000);
+
+    addLine(
+        "Got response 200(OK) from NiceProgrammer123456: Windows 12.1 (" +
+        generatedKey + ")",
+        "greenText"
+    );
+
+    await wait(1000);
+
+    btn.style.display = "none";
+
+    document.getElementById("keyPopup").style.display =
+        "block";
+
+setTimeout(() => {
+
+    const popup =
+        document.getElementById("keyPopup");
+
+    popup.style.opacity = "1";
+
+    popup.style.transform =
+        "translate(-50%,-50%) scale(1)";
+
+    document
+        .querySelector(".terminal")
+        .classList.add("blurred");
+
+}, 50);
+
+    document.getElementById("keyBox").value =
+        generatedKey;
+});
+
+function copyKey(){
+    navigator.clipboard.writeText(
+        document.getElementById("keyBox").value
+    );
+}
+</script>
+
 </body>
 </html>
