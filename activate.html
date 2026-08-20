@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Windows 12 Activator</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/microsoft/cascadia-code/releases@latest/Cascadia.css">
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/microsoft/cascadia-code/releases@latest/Cascadia.css">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,17 +18,58 @@
     font-family:"Segoe UI",sans-serif;
 }
 
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
 body{
     height:100vh;
     overflow:hidden;
+
     background:
-        radial-gradient(circle at 20% 20%, #ff5ebc55 0%, transparent 30%),
-        radial-gradient(circle at 80% 30%, #7c4dff66 0%, transparent 35%),
-        radial-gradient(circle at 50% 80%, #00e5ff55 0%, transparent 35%),
-        linear-gradient(135deg,#1a0933,#2d1464,#0e3a6d);
+        radial-gradient(
+            circle at 20% 20%,
+            #ff5ebc55 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            #7c4dff66 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 80%,
+            #00e5ff55 0%,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #1a0933,
+            #2d1464,
+            #0e3a6d
+        );
 }
 
-/* Bloom-style wallpaper */
+
+/* =========================
+   IFRAME SCALE
+   ========================= */
+
+body.in-iframe{
+    transform:scale(.5);
+    transform-origin:top left;
+
+    width:200%;
+    height:200%;
+}
+
+
+/* =========================
+   BLOOM WALLPAPER
+   ========================= */
+
 .bloom{
     position:fixed;
     inset:0;
@@ -34,395 +79,962 @@ body{
 .bloom::before,
 .bloom::after{
     content:"";
+
     position:absolute;
+
     width:900px;
     height:900px;
+
     border-radius:50%;
+
     filter:blur(60px);
 }
 
 .bloom::before{
+
     background:
-    conic-gradient(
-        #ff4fd8,
-        #9b5cff,
-        #4f7dff,
-        #00d9ff,
-        #ff4fd8
-    );
+        conic-gradient(
+            #ff4fd8,
+            #9b5cff,
+            #4f7dff,
+            #00d9ff,
+            #ff4fd8
+        );
+
     top:50%;
     left:50%;
+
     transform:
         translate(-50%,-50%)
         rotate(25deg)
-        scale(0.8,0.45);
+        scale(.8,.45);
 }
 
 .bloom::after{
+
     background:
-    conic-gradient(
-        #ffffff22,
-        #ffffff00,
-        #ffffff22
-    );
+        conic-gradient(
+            #ffffff22,
+            #ffffff00,
+            #ffffff22
+        );
+
     top:50%;
     left:50%;
+
     transform:
         translate(-50%,-50%)
         rotate(-20deg)
-        scale(0.7,0.4);
+        scale(.7,.4);
 }
 
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
 .container{
+
     position:absolute;
+
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
+
+    transform:
+        translate(-50%,-50%);
+
     text-align:center;
+
     color:white;
+
     z-index:5;
+
     transition:.8s;
 }
 
 .logo{
+
     width:110px;
     height:110px;
+
     margin:auto;
     margin-bottom:15px;
 }
 
 h1{
+
     font-size:48px;
+
     font-weight:900;
+
     margin-bottom:10px;
 }
 
 h4{
+
     font-size:18px;
+
     font-weight:500;
+
     opacity:.9;
+
     max-width:800px;
 }
 
+
+/* =========================
+   BUTTON
+   ========================= */
+
 .btn{
+
     margin-top:25px;
+
     border:none;
+
     background:#ff2d2d;
+
     color:white;
+
     font-size:24px;
+
     font-weight:900;
+
     padding:18px 42px;
+
     border-radius:16px;
+
     cursor:pointer;
+
     transition:.8s;
-    box-shadow:0 10px 35px rgba(0,0,0,.35);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35);
 }
 
 .btn:hover{
+
     transform:scale(1.05);
 }
 
+.btn:disabled{
+
+    cursor:default;
+}
+
+
+/*
+   Button after generation starts.
+   Very high z-index so it stays above
+   terminal and blur.
+*/
+
 .top-button{
+
     position:fixed;
+
     top:25px;
     left:50%;
-    transform:translateX(-50%);
-    z-index:1000;
+
+    transform:
+        translateX(-50%);
+
+    z-index:3000;
 }
 
 .generating{
+
     background:#ffd400 !important;
+
     color:black !important;
 }
 
+
+/* =========================
+   TERMINAL BACKDROP
+   ========================= */
+
 .terminal-wrapper{
+
     position:fixed;
+
     inset:0;
+
+    /*
+       This backdrop blurs the page behind
+       the terminal.
+    */
+
     backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
     background:rgba(0,0,0,.15);
+
     display:none;
+
     align-items:center;
     justify-content:center;
-    z-index:50;
+
+    /*
+       Below button.
+    */
+
+    z-index:100;
 }
+
+
+/* =========================
+   TERMINAL
+   ========================= */
 
 .terminal{
+
     width:900px;
+
     max-width:90%;
+
     height:420px;
-    margin-top:-120px;
+
+    /*
+       Move terminal 200px upward.
+    */
+
+    margin-top:-200px;
+
     border-radius:22px;
+
     overflow:hidden;
-    background:rgba(30,30,30,.65);
-    border:1px solid rgba(255,255,255,.15);
-    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    background:
+        rgba(30,30,30,.65);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
     backdrop-filter:blur(40px);
+
+    -webkit-backdrop-filter:blur(40px);
+
+    transition:
+        filter .4s ease,
+        opacity .4s ease;
 }
 
+
+/*
+   Terminal becomes blurred when
+   generated key window appears.
+*/
+
+.terminal.blurred{
+
+    filter:blur(8px);
+}
+
+
+/* =========================
+   TERMINAL HEADER
+   ========================= */
+
 .term-header{
+
     height:42px;
+
     display:flex;
+
     align-items:center;
+
     padding-left:15px;
-    background:rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.08);
 }
 
 .dot{
+
     width:12px;
     height:12px;
+
     border-radius:50%;
+
     margin-right:8px;
 }
 
-.red{background:#ff5f57;}
-.yellow{background:#febc2e;}
-.green{background:#28c840;}
+.red{
+    background:#ff5f57;
+}
+
+.yellow{
+    background:#febc2e;
+}
+
+.green{
+    background:#28c840;
+}
+
+
+/* =========================
+   TERMINAL CONTENT
+   ========================= */
 
 .term-content{
+
     padding:20px;
-    font-family:"Cascadia Code", monospace;
+
+    /*
+       Cascadia Code / Cascade Code
+       style terminal font.
+    */
+
+    font-family:
+        "Cascadia Code",
+        "Cascadia Mono",
+        monospace;
+
     font-size:18px;
+
     overflow:auto;
-    height:calc(100% - 42px);
+
+    height:
+        calc(100% - 42px);
 }
 
 .line{
+
     margin-bottom:12px;
+
     opacity:0;
-    animation:fade .4s forwards;
+
+    animation:
+        fade .4s forwards;
+
     line-height:1.5;
+
     word-break:break-word;
+
+    font-family:
+        "Cascadia Code",
+        "Cascadia Mono",
+        monospace;
+}
+
+.line span{
+
+    font-family:
+        "Cascadia Code",
+        "Cascadia Mono",
+        monospace;
 }
 
 @keyframes fade{
-    to{opacity:1;}
+
+    to{
+        opacity:1;
+    }
 }
 
-.purple{color:#cc77ff;}
-.yellowText{color:#ffe14a;}
-.greenText{color:#4cff79;}
+
+/* Terminal colors */
+
+.purple{
+    color:#cc77ff;
+}
+
+.yellowText{
+    color:#ffe14a;
+}
+
+.greenText{
+    color:#4cff79;
+}
+
+
+/* =========================
+   GENERATED KEY WINDOW
+   ========================= */
 
 .key-popup{
+
     position:fixed;
+
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%) scale(.8);
+
+    transform:
+        translate(-50%,-50%)
+        scale(.8);
+
     opacity:0;
 
     background:#19c35a;
+
     color:white;
+
     padding:18px;
+
     border-radius:18px;
 
     width:650px;
+
     max-width:95%;
 
     display:none;
-    z-index:1200;
 
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
-    transition:.4s;
+    /*
+       Above terminal,
+       above terminal blur,
+       above generating button.
+    */
+
+    z-index:5000;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
 }
 
 .key-title{
+
     font-size:22px;
+
     font-weight:900;
+
     margin-bottom:12px;
 }
 
 .key-row{
+
     display:flex;
+
     gap:10px;
 }
 
 .key-box{
+
     flex:1;
+
     background:#121212;
+
     color:#7dff9c;
+
     border:none;
+
+    outline:none;
+
     border-radius:10px;
+
     padding:12px;
-    font-family:Consolas;
+
+    font-family:
+        "Cascadia Code",
+        "Cascadia Mono",
+        monospace;
+
     font-size:16px;
 }
 
 .copy-btn{
+
     border:none;
+
     background:white;
+
     color:black;
+
     font-weight:800;
+
     border-radius:10px;
+
     padding:0 20px;
+
     cursor:pointer;
+
+    transition:.2s;
 }
 
-.terminal.blurred{
-    filter:blur(8px);
-    transition:filter .4s ease;
+.copy-btn:hover{
+
+    transform:scale(1.04);
 }
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:700px){
+
+    h1{
+        font-size:34px;
+    }
+
+    h4{
+        font-size:15px;
+        padding:0 20px;
+    }
+
+    .terminal{
+        width:92%;
+        height:350px;
+    }
+
+    .term-content{
+        font-size:14px;
+    }
+
+    .key-popup{
+        width:90%;
+    }
+
+    .key-row{
+        flex-direction:column;
+    }
+
+    .copy-btn{
+        padding:12px;
+    }
+}
+
 </style>
 </head>
+
+
 <body>
 
 <div class="bloom"></div>
 
+
+<!-- =========================
+     MAIN PAGE
+     ========================= -->
+
 <div class="container" id="hero">
 
-<svg class="logo" viewBox="0 0 88 88">
-<rect x="6" y="6" width="34" height="34" fill="#4cc2ff"/>
-<rect x="48" y="6" width="34" height="34" fill="#4cc2ff"/>
-<rect x="6" y="48" width="34" height="34" fill="#4cc2ff"/>
-<rect x="48" y="48" width="34" height="34" fill="#4cc2ff"/>
-</svg>
+    <svg
+        class="logo"
+        viewBox="0 0 88 88"
+    >
 
-<h1><b>Windows 12 Activator</b></h1>
+        <rect
+            x="6"
+            y="6"
+            width="34"
+            height="34"
+            fill="#4cc2ff"
+        />
 
-<h4>
-Generate a free Windows 12 Activation key.
-100% secure.
-Made by murztandj97 for the Windows 12.1 Project
-</h4>
+        <rect
+            x="48"
+            y="6"
+            width="34"
+            height="34"
+            fill="#4cc2ff"
+        />
 
-<button class="btn" id="startBtn">
-Get it now!
-</button>
+        <rect
+            x="6"
+            y="48"
+            width="34"
+            height="34"
+            fill="#4cc2ff"
+        />
+
+        <rect
+            x="48"
+            y="48"
+            width="34"
+            height="34"
+            fill="#4cc2ff"
+        />
+
+    </svg>
+
+
+    <h1>
+        <b>Windows 12 Activator</b>
+    </h1>
+
+
+    <h4>
+        Generate a free Windows 12 Activation key.
+        100% secure.
+        Made by murztandj97 for the Windows 12.1 Project
+    </h4>
+
+
+    <button
+        class="btn"
+        id="startBtn"
+    >
+        Get it now!
+    </button>
 
 </div>
 
-<div class="terminal-wrapper" id="terminalWrapper">
+
+<!-- =========================
+     TERMINAL
+     ========================= -->
+
+<div
+    class="terminal-wrapper"
+    id="terminalWrapper"
+>
+
     <div class="terminal">
+
         <div class="term-header">
+
             <div class="dot red"></div>
+
             <div class="dot yellow"></div>
+
             <div class="dot green"></div>
+
         </div>
 
-        <div class="term-content" id="terminal"></div>
+
+        <div
+            class="term-content"
+            id="terminal"
+        ></div>
+
     </div>
+
 </div>
 
-<div class="key-popup" id="keyPopup">
-    <div class="key-title">Your Generated Key:</div>
+
+<!-- =========================
+     GENERATED KEY DIALOG
+     ========================= -->
+
+<div
+    class="key-popup"
+    id="keyPopup"
+>
+
+    <div class="key-title">
+        Your Generated Key:
+    </div>
+
 
     <div class="key-row">
-        <input class="key-box" readonly id="keyBox">
-        <button class="copy-btn" onclick="copyKey()">
+
+        <input
+            class="key-box"
+            readonly
+            id="keyBox"
+        >
+
+
+        <button
+            class="copy-btn"
+            onclick="copyKey()"
+        >
             Copy
         </button>
+
     </div>
+
 </div>
+
 
 <script>
 
+/* =========================
+   IFRAME DETECTION
+   ========================= */
+
+if(window.self !== window.top){
+
+    document.body.classList.add("in-iframe");
+
+}
+
+
+/* =========================
+   KEYS
+   ========================= */
+
 const keys = [
-"GYJKI-OKITE-INDTH-QGRAB-MSTSC",
-"FTBDH-OANTH-RJAVL-KAVER-ISINT",
-"MURZI-YUGFT-LAKOM-THWNL-AMFJY",
-"ALRBY-LABRT-WCXJG-QOIYF-ZXCVB",
-"ABFKR-ROTNG-BERQS-LRUNY-EWOBS",
-"DIFNH-DHRJO-QPRYE-MFKGV-EHNFT",
-"ZMXNC-BVLAK-SJDHF-GPQOI-EURYM",
-"EURHF-ALFBG-QITBF-LABFT-RTUBY",
-"EIOUR-BJKES-NVZWW-SADLK-EWPOI",
-"AUDNB-QKRGY-WIRBG-ALDHG-ETBGC",
-"FSTRH-BVFHK-WURHD-FAGHF-ROUJH",
-"MDUBI-YTMWN-TJKAM-ARUTE-WINTW",
-"PDJSF-WRUYR-VNHVI-QUCHE-LAUTB",
-"ASJHD-ASHER-TRASH-FFBYU-MRZNN"
+
+    "GYJKI-OKITE-INDTH-QGRAB-MSTSC",
+
+    "FTBDH-OANTH-RJAVL-KAVER-ISINT",
+
+    "MURZI-YUGFT-LAKOM-THWNL-AMFJY",
+
+    "ALRBY-LABRT-WCXJG-QOIYF-ZXCVB",
+
+    "ABFKR-ROTNG-BERQS-LRUNY-EWOBS",
+
+    "DIFNH-DHRJO-QPRYE-MFKGV-EHNFT",
+
+    "ZMXNC-BVLAK-SJDHF-GPQOI-EURYM",
+
+    "EURHF-ALFBG-QITBF-LABFT-RTUBY",
+
+    "EIOUR-BJKES-NVZWW-SADLK-EWPOI",
+
+    "AUDNB-QKRGY-WIRBG-ALDHG-ETBGC",
+
+    "FSTRH-BVFHK-WURHD-FAGHF-ROUJH",
+
+    "MDUBI-YTMWN-TJKAM-ARUTE-WINTW",
+
+    "PDJSF-WRUYR-VNHVI-QUCHE-LAUTB",
+
+    "ASJHD-ASHER-TRASH-FFBYU-MRZNN"
+
 ];
+
 
 let generatedKey = "";
 
-const terminal = document.getElementById("terminal");
-const btn = document.getElementById("startBtn");
+
+const terminal =
+    document.getElementById("terminal");
+
+const btn =
+    document.getElementById("startBtn");
+
+
+/* =========================
+   ADD TERMINAL LINE
+   ========================= */
 
 function addLine(text, cls){
 
-    const div = document.createElement("div");
+    const div =
+        document.createElement("div");
+
     div.className = "line";
 
+
     div.innerHTML =
-        '<span style="color:white;">[win12gen]</span> ' +
-        '<span class="' + cls + '">' +
+
+        '<span style="color:white;">' +
+        '[win12gen]' +
+        '</span> ' +
+
+        '<span class="' +
+        cls +
+        '">' +
+
         text +
+
         '</span>';
 
+
     terminal.appendChild(div);
-    terminal.scrollTop = terminal.scrollHeight;
+
+    terminal.scrollTop =
+        terminal.scrollHeight;
 }
+
+
+/* =========================
+   WAIT
+   ========================= */
 
 function wait(ms){
-    return new Promise(r=>setTimeout(r,ms));
+
+    return new Promise(
+        resolve =>
+            setTimeout(resolve,ms)
+    );
+
 }
 
-btn.addEventListener("click", async ()=>{
 
-    btn.disabled = true;
+/* =========================
+   GENERATOR
+   ========================= */
 
-    document.getElementById("hero").style.transform =
-        "translate(-50%,-65%)";
+btn.addEventListener(
+    "click",
+    async () => {
 
-    btn.classList.add("top-button");
-    btn.classList.add("generating");
-    btn.textContent = "Generating key...";
 
-    document.getElementById("terminalWrapper").style.display = "flex";
+        btn.disabled = true;
 
-    generatedKey =
-        keys[Math.floor(Math.random()*keys.length)];
 
-    addLine(
-        "Universal Windows 12 Generator Ready...",
-        "purple"
-    );
+        /*
+           Move original hero slightly upward.
+        */
 
-    await wait(2000);
+        document.getElementById(
+            "hero"
+        ).style.transform =
+            "translate(-50%,-65%)";
 
-    addLine(
-        "Generating Windows 12 key...",
-        "yellowText"
-    );
 
-    await wait(5000);
+        /*
+           Move button to top.
+        */
 
-    addLine(
-        "Got response 200(OK) from NiceProgrammer123456: Windows 12.1 (" +
-        generatedKey + ")",
-        "greenText"
-    );
+        btn.classList.add(
+            "top-button"
+        );
 
-    await wait(1000);
 
-    btn.style.display = "none";
+        btn.classList.add(
+            "generating"
+        );
 
-    document.getElementById("keyPopup").style.display =
-        "block";
 
-setTimeout(() => {
+        btn.textContent =
+            "Generating key...";
 
-    const popup =
-        document.getElementById("keyPopup");
 
-    popup.style.opacity = "1";
+        /*
+           Show terminal.
+        */
 
-    popup.style.transform =
-        "translate(-50%,-50%) scale(1)";
+        document.getElementById(
+            "terminalWrapper"
+        ).style.display =
+            "flex";
 
-    document
-        .querySelector(".terminal")
-        .classList.add("blurred");
 
-}, 50);
+        /*
+           Select random key.
+        */
 
-    document.getElementById("keyBox").value =
-        generatedKey;
-});
+        generatedKey =
+            keys[
+                Math.floor(
+                    Math.random() *
+                    keys.length
+                )
+            ];
+
+
+        /* =====================
+           LINE 1
+           ===================== */
+
+        addLine(
+            "Universal Windows 12 Generator Ready...",
+            "purple"
+        );
+
+
+        await wait(2000);
+
+
+        /* =====================
+           LINE 2
+           ===================== */
+
+        addLine(
+            "Generating Windows 12 key...",
+            "yellowText"
+        );
+
+
+        await wait(5000);
+
+
+        /* =====================
+           LINE 3
+           ===================== */
+
+        addLine(
+
+            "Got response 200(OK) from NiceProgrammer123456:Windows 12.1(" +
+            generatedKey +
+            ")",
+
+            "greenText"
+
+        );
+
+
+        await wait(1000);
+
+
+        /*
+           Hide yellow button.
+        */
+
+        btn.style.display =
+            "none";
+
+
+        /*
+           Show green dialog.
+        */
+
+        const popup =
+            document.getElementById(
+                "keyPopup"
+            );
+
+
+        popup.style.display =
+            "block";
+
+
+        /*
+           Blur terminal.
+        */
+
+        document
+            .querySelector(".terminal")
+            .classList.add("blurred");
+
+
+        /*
+           Animate green dialog.
+        */
+
+        setTimeout(() => {
+
+            popup.style.opacity =
+                "1";
+
+            popup.style.transform =
+                "translate(-50%,-50%) scale(1)";
+
+        },50);
+
+        
+        /*
+           Put generated key
+           into readonly box.
+        */
+
+        document.getElementById(
+            "keyBox"
+        ).value =
+            generatedKey;
+
+    }
+);
+
+
+/* =========================
+   COPY
+   ========================= */
 
 function copyKey(){
+
     navigator.clipboard.writeText(
-        document.getElementById("keyBox").value
+        document.getElementById(
+            "keyBox"
+        ).value
     );
+
 }
+
 </script>
 
 </body>
